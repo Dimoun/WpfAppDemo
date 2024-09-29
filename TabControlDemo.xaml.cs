@@ -24,5 +24,14 @@ namespace WpfAppDemo
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button element = sender as Button;
+            if (element != null && int.TryParse(element.Content.ToString(), out int contentValue))
+            {
+                this.tab.SelectedIndex = contentValue == 0 ? 1 : 0;
+            }
+        }
     }
 }
